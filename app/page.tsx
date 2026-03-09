@@ -5,6 +5,7 @@ import Link from "next/link"
 import { services, projects } from "@/data/mockData"
 import { ServiceCard } from "@/components/ServiceCard"
 import { PortfolioCard } from "@/components/PortfolioCard"
+import { ArrowRight, ChatCenteredDots, IconShell, Sparkle, WhatsappLogo } from "@/lib/site-icons"
 
 export default function Home() {
   return (
@@ -24,7 +25,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="badge mb-6 inline-block">
+              <span className="badge mb-6 inline-flex gap-2">
+                <Sparkle size={16} weight="fill" />
                 Software House Profesional
               </span>
             </motion.div>
@@ -56,12 +58,14 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <Link href="/contact" className="btn-primary">
+                <ChatCenteredDots size={18} weight="duotone" />
                 Mulai Proyek Anda
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                <ArrowRight size={18} weight="bold" />
               </Link>
               <Link href="/portfolio" className="btn-secondary">
+                <IconShell className="w-9 h-9 rounded-full">
+                  <Sparkle size={16} weight="duotone" className="text-primary" />
+                </IconShell>
                 Lihat Portfolio
               </Link>
             </motion.div>
@@ -79,7 +83,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="badge mb-4 inline-block">Layanan Kami</span>
+            <span className="badge mb-4 inline-flex gap-2"><Sparkle size={16} weight="fill" />Layanan Kami</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Solusi Digital untuk Bisnis Anda
             </h2>
@@ -103,9 +107,7 @@ export default function Home() {
           >
             <Link href="/services" className="btn-secondary">
               Lihat Semua Layanan
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <ArrowRight size={18} weight="bold" />
             </Link>
           </motion.div>
         </div>
@@ -121,7 +123,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="badge mb-4 inline-block">Portfolio</span>
+            <span className="badge mb-4 inline-flex gap-2"><Sparkle size={16} weight="fill" />Portfolio</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Proyek yang Telah Kami Kerjakan
             </h2>
@@ -145,9 +147,7 @@ export default function Home() {
           >
             <Link href="/portfolio" className="btn-secondary">
               Lihat Semua Portfolio
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <ArrowRight size={18} weight="bold" />
             </Link>
           </motion.div>
         </div>
@@ -171,6 +171,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="btn-primary bg-white text-secondary hover:bg-gray-100">
+                <ChatCenteredDots size={18} weight="duotone" />
                 Hubungi Kami Sekarang
               </Link>
               <a
@@ -179,6 +180,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="btn-secondary border-white/30 text-white hover:bg-white/10 group"
               >
+                <WhatsappLogo size={18} weight="fill" />
                 <p className="text-white group-hover:text-secondary">Chat via WhatsApp</p>
               </a>
             </div>

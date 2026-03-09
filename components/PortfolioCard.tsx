@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import type { Project } from "@/data/mockData"
 import Image from "next/image"
+import { ArrowRight, CategoryIcon, IconShell } from "@/lib/site-icons"
 
 interface PortfolioCardProps {
     project: Project
@@ -25,17 +26,16 @@ export const PortfolioCard = ({ project, index }: PortfolioCardProps) => {
                         {project.thumbnail.length > 0 ? (
                             <Image src={project.thumbnail} alt={project.title} fill />
                         ) : (
-                            <span className="text-6xl opacity-30">{getCategoryIcon(project.category)}</span>
+                            <IconShell className="w-24 h-24">
+                                <CategoryIcon category={project.category} size={48} className="text-primary/80" />
+                            </IconShell>
                         )}
                     </div>
                     {/* Overlay on hover */}
                     <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <span className="text-white font-medium flex items-center gap-2">
                             Lihat Detail
-
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
+                            <ArrowRight size={18} weight="bold" />
                         </span>
                     </div>
                 </div>
@@ -78,16 +78,4 @@ export const PortfolioCard = ({ project, index }: PortfolioCardProps) => {
             </Link>
         </motion.div>
     )
-}
-
-function getCategoryIcon(category: string): string {
-    const icons: Record<string, string> = {
-        "Website": "🌐",
-        "Mobile Apps": "📱",
-        "RAG/AI": "🤖",
-        "Branding": "✨",
-        "Poster": "🖼️",
-        "Undangan": "💌"
-    }
-    return icons[category] || "💻"
 }

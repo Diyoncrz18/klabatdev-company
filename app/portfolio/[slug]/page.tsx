@@ -6,6 +6,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { projects } from "@/data/mockData"
 import Image from "next/image"
+import { ArrowLeft, CategoryIcon, CheckCircle, GlobeHemisphereWest, IconShell } from "@/lib/site-icons"
 
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -41,9 +42,7 @@ export default function PortfolioDetailPage({ params }: Props) {
                             href="/portfolio"
                             className="inline-flex items-center gap-2 text-muted hover:text-primary transition-colors mb-8"
                         >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
+                            <ArrowLeft size={18} weight="bold" />
                             Kembali ke Portfolio
                         </Link>
 
@@ -121,9 +120,9 @@ export default function PortfolioDetailPage({ params }: Props) {
                                 ) : (
                                     // No images - show icon
                                     <div className="card overflow-hidden aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                                        <span className="text-8xl opacity-30">
-                                            {getCategoryIcon(project.category)}
-                                        </span>
+                                        <IconShell className="w-28 h-28">
+                                            <CategoryIcon category={project.category} size={56} className="text-primary/80" />
+                                        </IconShell>
                                     </div>
                                 )}
                             </motion.div>
@@ -148,9 +147,7 @@ export default function PortfolioDetailPage({ params }: Props) {
                                             className="flex items-center gap-3 p-4 bg-card-hover rounded-lg"
                                         >
                                             <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                                                <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
+                                                <CheckCircle size={16} weight="fill" className="text-primary" />
                                             </div>
                                             <span className="font-medium">{feature}</span>
                                         </div>
@@ -206,9 +203,7 @@ export default function PortfolioDetailPage({ params }: Props) {
                                         className="btn-primary w-full justify-center"
                                     >
                                         Kunjungi Website
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                        </svg>
+                                        <GlobeHemisphereWest size={18} weight="duotone" />
                                     </a>
                                 )}
 
@@ -239,9 +234,9 @@ export default function PortfolioDetailPage({ params }: Props) {
                                     href={`/portfolio/${p.slug}`}
                                     className="card p-4 flex items-center gap-4 hover:border-primary transition-colors"
                                 >
-                                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-xl">
-                                        {getCategoryIcon(p.category)}
-                                    </div>
+                                    <IconShell className="w-12 h-12 rounded-2xl">
+                                        <CategoryIcon category={p.category} size={24} className="text-primary" />
+                                    </IconShell>
                                     <div>
                                         <h3 className="font-medium">{p.title}</h3>
                                         <p className="text-sm text-muted">{p.category}</p>
@@ -253,16 +248,4 @@ export default function PortfolioDetailPage({ params }: Props) {
             </section>
         </>
     )
-}
-
-function getCategoryIcon(category: string): string {
-    const icons: Record<string, string> = {
-        "Website": "🌐",
-        "Mobile Apps": "📱",
-        "RAG/AI": "🤖",
-        "Branding": "✨",
-        "Poster": "🖼️",
-        "Undangan": "💌"
-    }
-    return icons[category] || "💻"
 }

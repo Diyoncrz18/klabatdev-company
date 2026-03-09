@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { companyInfo } from "@/data/mockData"
+import { ArrowLeft, EnvelopeSimple, IconShell, Phone, Scales } from "@/lib/site-icons"
 
 export default function TermsOfServicePage() {
     return (
@@ -16,7 +17,7 @@ export default function TermsOfServicePage() {
                         transition={{ duration: 0.5 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="badge mb-4 inline-block">Legal</span>
+                        <span className="badge mb-4 inline-flex gap-2"><Scales size={16} weight="fill" />Legal</span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             Syarat & <span className="gradient-text">Ketentuan</span>
                         </h1>
@@ -177,21 +178,32 @@ export default function TermsOfServicePage() {
                                 <p className="text-muted leading-relaxed mb-4">
                                     Untuk pertanyaan tentang Syarat dan Ketentuan ini, silakan hubungi:
                                 </p>
-                                <div className="bg-card-hover p-4 rounded-lg">
-                                    <p className="text-muted">
-                                        <strong>Email:</strong> {companyInfo.email}<br />
-                                        <strong>Telepon:</strong> {companyInfo.phone}<br />
-                                        <strong>Alamat:</strong> {companyInfo.location}
-                                    </p>
+                                <div className="bg-card-hover p-4 rounded-lg space-y-3">
+                                    <div className="flex items-center gap-3 text-muted">
+                                        <IconShell className="w-10 h-10 rounded-2xl">
+                                            <EnvelopeSimple size={18} weight="duotone" className="text-primary" />
+                                        </IconShell>
+                                        <span><strong>Email:</strong> {companyInfo.email}</span>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-muted">
+                                        <IconShell className="w-10 h-10 rounded-2xl">
+                                            <Phone size={18} weight="duotone" className="text-primary" />
+                                        </IconShell>
+                                        <span><strong>Telepon:</strong> {companyInfo.phone}</span>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-muted">
+                                        <IconShell className="w-10 h-10 rounded-2xl">
+                                            <Scales size={18} weight="duotone" className="text-primary" />
+                                        </IconShell>
+                                        <span><strong>Alamat:</strong> {companyInfo.location}</span>
+                                    </div>
                                 </div>
                             </div>
 
                             {/* Back Link */}
                             <div className="pt-6 border-t border-border">
                                 <Link href="/" className="text-primary hover:underline flex items-center gap-2">
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                    </svg>
+                                    <ArrowLeft size={18} weight="bold" />
                                     Kembali ke Beranda
                                 </Link>
                             </div>

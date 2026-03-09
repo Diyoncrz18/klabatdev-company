@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { companyInfo } from "@/data/mockData"
+import { ArrowRight, IconShell, MapPin, RocketLaunch, Target, ValueIcon } from "@/lib/site-icons"
 
 export default function AboutPage() {
     return (
@@ -16,7 +17,7 @@ export default function AboutPage() {
                         transition={{ duration: 0.5 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="badge mb-4 inline-block">Tentang Kami</span>
+                        <span className="badge mb-4 inline-flex gap-2"><Target size={16} weight="fill" />Tentang Kami</span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             Mengenal Lebih Dekat <span className="gradient-text">{companyInfo.name}</span>
                         </h1>
@@ -99,9 +100,9 @@ export default function AboutPage() {
                             viewport={{ once: true }}
                             className="card p-8"
                         >
-                            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-2xl mb-4">
-                                🎯
-                            </div>
+                            <IconShell className="w-14 h-14 mb-4">
+                                <Target size={28} weight="duotone" className="text-primary" />
+                            </IconShell>
                             <h3 className="text-2xl font-semibold mb-4">Visi</h3>
                             <p className="text-muted">{companyInfo.vision}</p>
                         </motion.div>
@@ -113,9 +114,9 @@ export default function AboutPage() {
                             viewport={{ once: true }}
                             className="card p-8"
                         >
-                            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-2xl mb-4">
-                                🚀
-                            </div>
+                            <IconShell className="w-14 h-14 mb-4">
+                                <RocketLaunch size={28} weight="duotone" className="text-primary" />
+                            </IconShell>
                             <h3 className="text-2xl font-semibold mb-4">Misi</h3>
                             <p className="text-muted">{companyInfo.mission}</p>
                         </motion.div>
@@ -152,9 +153,9 @@ export default function AboutPage() {
                                 viewport={{ once: true }}
                                 className="card p-6 text-center group hover:bg-primary hover:text-white transition-colors"
                             >
-                                <div className="w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-white/20 flex items-center justify-center text-2xl mx-auto mb-4 transition-colors">
-                                    {value.icon}
-                                </div>
+                                <IconShell className="w-14 h-14 mx-auto mb-4 group-hover:bg-white/20 group-hover:border-white/20 transition-colors">
+                                    <ValueIcon iconKey={value.iconKey} size={28} className="text-primary group-hover:text-white transition-colors" />
+                                </IconShell>
                                 <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
                                 <p className="text-muted group-hover:text-white/80 text-sm transition-colors">
                                     {value.description}
@@ -175,16 +176,14 @@ export default function AboutPage() {
                             transition={{ duration: 0.5 }}
                             viewport={{ once: true }}
                         >
-                            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-3xl mx-auto mb-6">
-                                📍
-                            </div>
+                            <IconShell className="w-16 h-16 rounded-full mx-auto mb-6">
+                                <MapPin size={30} weight="duotone" className="text-primary" />
+                            </IconShell>
                             <h2 className="text-3xl font-bold mb-4">Lokasi Kami</h2>
                             <p className="text-muted text-lg mb-8">{companyInfo.location}</p>
                             <Link href="/contact" className="btn-primary">
                                 Hubungi Kami
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
+                                <ArrowRight size={18} weight="bold" />
                             </Link>
                         </motion.div>
                     </div>

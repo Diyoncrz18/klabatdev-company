@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { services } from "@/data/mockData"
 import { ServiceCard } from "@/components/ServiceCard"
+import { ChatCenteredDots, ClipboardText, GearSix, IconShell, RocketLaunch, Sparkle } from "@/lib/site-icons"
 
 export default function ServicesPage() {
     return (
@@ -16,7 +17,7 @@ export default function ServicesPage() {
                         transition={{ duration: 0.5 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="badge mb-4 inline-block">Layanan Kami</span>
+                        <span className="badge mb-4 inline-flex gap-2"><Sparkle size={16} weight="fill" />Layanan Kami</span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             Solusi Digital <span className="gradient-text">Lengkap</span>
                         </h1>
@@ -64,25 +65,25 @@ export default function ServicesPage() {
                                 step: "01",
                                 title: "Diskusi & Analisis",
                                 description: "Memahami kebutuhan dan tujuan bisnis Anda melalui konsultasi mendalam.",
-                                icon: "💬"
+                                icon: ChatCenteredDots
                             },
                             {
                                 step: "02",
                                 title: "Perencanaan",
                                 description: "Merancang solusi yang tepat dengan timeline dan estimasi biaya yang jelas.",
-                                icon: "📋"
+                                icon: ClipboardText
                             },
                             {
                                 step: "03",
                                 title: "Pengembangan",
                                 description: "Mengembangkan produk dengan standar kualitas tinggi dan update berkala.",
-                                icon: "⚙️"
+                                icon: GearSix
                             },
                             {
                                 step: "04",
                                 title: "Peluncuran & Support",
                                 description: "Meluncurkan produk dan memberikan support berkelanjutan.",
-                                icon: "🚀"
+                                icon: RocketLaunch
                             },
                         ].map((item, index) => (
                             <motion.div
@@ -93,9 +94,9 @@ export default function ServicesPage() {
                                 viewport={{ once: true }}
                                 className="text-center"
                             >
-                                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-2xl mx-auto mb-4">
-                                    {item.icon}
-                                </div>
+                                <IconShell className="w-16 h-16 rounded-full mx-auto mb-4">
+                                    <item.icon size={28} weight="duotone" className="text-primary" />
+                                </IconShell>
                                 <div className="text-sm text-primary font-medium mb-2">{item.step}</div>
                                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                                 <p className="text-muted text-sm">{item.description}</p>
@@ -126,6 +127,7 @@ export default function ServicesPage() {
                             href="/contact"
                             className="btn-primary bg-white text-primary hover:bg-gray-100 inline-flex"
                         >
+                            <ChatCenteredDots size={18} weight="duotone" />
                             Konsultasi Gratis
                         </a>
                     </motion.div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import type { Service } from "@/data/mockData"
+import { IconShell, ServiceIcon } from "@/lib/site-icons"
 
 interface ServiceCardProps {
     service: Service
@@ -19,9 +20,9 @@ export const ServiceCard = ({ service, index }: ServiceCardProps) => {
             id={service.id}
         >
             {/* Icon */}
-            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                {service.icon}
-            </div>
+            <IconShell className="w-14 h-14 mb-4 group-hover:scale-110 transition-transform duration-300">
+                <ServiceIcon iconKey={service.iconKey} className="text-primary" />
+            </IconShell>
 
             {/* Title */}
             <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">

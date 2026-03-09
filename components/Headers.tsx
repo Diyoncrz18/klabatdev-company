@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { List, Phone, WhatsappLogo, X } from "@/lib/site-icons"
 
 const navLinks = [
     { href: "/", label: "Beranda" },
@@ -64,6 +65,7 @@ export const HeaderComp = () => {
                     <Link href="https://wa.me/6282187199940"
                         target="_blank"
                         rel="noopener noreferrer" className="btn-primary text-sm py-2.5 px-5">
+                        <WhatsappLogo size={18} weight="fill" />
                         Hubungi Kami
                     </Link>
                 </nav>
@@ -74,28 +76,7 @@ export const HeaderComp = () => {
                     className="md:hidden p-2 text-foreground"
                     aria-label="Toggle menu"
                 >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        {isOpen ? (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        ) : (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                        )}
-                    </svg>
+                    {isOpen ? <X size={24} weight="bold" /> : <List size={24} weight="bold" />}
                 </button>
             </div>
 
@@ -132,6 +113,7 @@ export const HeaderComp = () => {
                                 className="btn-primary text-sm py-2.5 text-center mt-2"
                                 onClick={() => setIsOpen(false)}
                             >
+                                <Phone size={18} weight="duotone" />
                                 Hubungi Kami
                             </Link>
                         </div>

@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { projects, categories } from "@/data/mockData"
 import { PortfolioCard } from "@/components/PortfolioCard"
+import { Buildings, CalendarDots, CategoryIcon, IconShell, Sparkle } from "@/lib/site-icons"
 
 export default function PortfolioPage() {
     const [activeCategory, setActiveCategory] = useState("All")
@@ -23,7 +24,7 @@ export default function PortfolioPage() {
                         transition={{ duration: 0.5 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="badge mb-4 inline-block">Portfolio</span>
+                        <span className="badge mb-4 inline-flex gap-2"><Sparkle size={16} weight="fill" />Portfolio</span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             Karya <span className="gradient-text">Terbaik</span> Kami
                         </h1>
@@ -54,7 +55,10 @@ export default function PortfolioPage() {
                                     : "bg-card-bg border border-border hover:border-primary hover:text-primary"
                                     }`}
                             >
-                                {category}
+                                <span className="inline-flex items-center gap-2">
+                                    <CategoryIcon category={category} size={16} className={activeCategory === category ? "text-white" : "text-primary"} />
+                                    {category}
+                                </span>
                             </button>
                         ))}
                     </motion.div>
@@ -89,10 +93,10 @@ export default function PortfolioPage() {
                 <div className="container">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {[
-                            { number: "5", label: "Proyek Selesai" },
-                            { number: "3", label: "Klien Puas" },
-                            { number: "6+", label: "Tahun Pengalaman" },
-                            { number: "100%", label: "Tingkat Kepuasan" },
+                            { number: "5", label: "Proyek Selesai", icon: Sparkle },
+                            { number: "3", label: "Klien Puas", icon: Buildings },
+                            { number: "6+", label: "Tahun Pengalaman", icon: CalendarDots },
+                            { number: "100%", label: "Tingkat Kepuasan", icon: Sparkle },
                         ].map((stat, index) => (
                             <motion.div
                                 key={stat.label}
@@ -102,6 +106,9 @@ export default function PortfolioPage() {
                                 viewport={{ once: true }}
                                 className="text-center"
                             >
+                                <IconShell className="w-14 h-14 mx-auto mb-4 rounded-full">
+                                    <stat.icon size={24} weight="duotone" className="text-primary" />
+                                </IconShell>
                                 <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
                                     {stat.number}
                                 </div>

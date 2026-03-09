@@ -1,11 +1,13 @@
 // Mock Data untuk Klabat Dev - Software House
 
+import type { ServiceIconKey, ValueIconKey } from "@/lib/site-icons"
+
 // ==================== SERVICES ====================
 export interface Service {
     id: string;
     title: string;
     description: string;
-    icon: string;
+    iconKey: ServiceIconKey;
     features: string[];
 }
 
@@ -14,56 +16,56 @@ export const services: Service[] = [
         id: "mobile-apps",
         title: "Mobile Apps Development",
         description: "Pengembangan aplikasi mobile native dan cross-platform untuk iOS dan Android dengan performa terbaik.",
-        icon: "📱",
+        iconKey: "mobile-apps",
         features: ["React Native", "Flutter", "Kotlin"]
     },
     {
         id: "website",
         title: "Website Development",
         description: "Pembuatan website profesional, responsive, dan SEO-friendly untuk kebutuhan bisnis Anda.",
-        icon: "🌐",
+        iconKey: "website",
         features: ["Next.js", "React", "Frontend", "Backend"]
     },
     {
         id: "rag-ai-assistant",
         title: "RAG / AI Assistant",
         description: "Pengembangan sistem AI dan chatbot cerdas berbasis RAG untuk membantu bisnis Anda.",
-        icon: "🤖",
+        iconKey: "rag-ai-assistant",
         features: ["ChatBot", "RAG System", "LLM Integration", "NLP", "Machine Learning"]
     },
     {
         id: "ui-ux-design",
         title: "UI/UX Design",
         description: "Desain antarmuka yang intuitif dan pengalaman pengguna yang optimal untuk produk digital.",
-        icon: "🎨",
+        iconKey: "ui-ux-design",
         features: ["Wireframing", "Prototyping", "User Research", "Design System", "Figma"]
     },
     {
         id: "poster-design",
         title: "Desain Poster",
         description: "Pembuatan poster promosi, event, dan iklan dengan desain kreatif dan menarik.",
-        icon: "🖼️",
+        iconKey: "poster-design",
         features: ["Poster Promosi", "Banner", "Brosur", "Flyer", "Social Media"]
     },
     {
         id: "invitation-design",
         title: "Desain Undangan",
         description: "Desain undangan digital dan cetak untuk berbagai acara spesial Anda.",
-        icon: "💌",
+        iconKey: "invitation-design",
         features: ["Undangan Digital", "Undangan Cetak", "Wedding", "Birthday", "Corporate Event"]
     },
     {
         id: "branding",
         title: "Branding & Logo",
         description: "Membangun identitas brand yang kuat dengan logo dan visual identity yang memorable.",
-        icon: "✨",
+        iconKey: "branding",
         features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Brand Strategy"]
     },
     {
         id: "maintenance",
         title: "Maintenance & Support",
         description: "Layanan pemeliharaan dan dukungan teknis untuk memastikan sistem Anda berjalan optimal.",
-        icon: "🔧",
+        iconKey: "maintenance",
         features: ["Bug Fixing", "Updates", "Hosting", "Monitoring", "24/7 Support"]
     }
 ];
@@ -170,22 +172,22 @@ export const companyInfo = {
         {
             title: "Kualitas",
             description: "Kami berkomitmen memberikan hasil terbaik dalam setiap proyek.",
-            icon: "⭐"
+            iconKey: "quality" as ValueIconKey
         },
         {
             title: "Inovasi",
             description: "Selalu mengikuti perkembangan teknologi terbaru untuk solusi optimal.",
-            icon: "💡"
+            iconKey: "innovation" as ValueIconKey
         },
         {
             title: "Kepercayaan",
             description: "Membangun hubungan jangka panjang berdasarkan transparansi dan integritas.",
-            icon: "🤝"
+            iconKey: "trust" as ValueIconKey
         },
         {
             title: "Kolaborasi",
             description: "Bekerja sama dengan klien sebagai partner untuk mencapai kesuksesan bersama.",
-            icon: "👥"
+            iconKey: "collaboration" as ValueIconKey
         }
     ],
     founded: "2025",

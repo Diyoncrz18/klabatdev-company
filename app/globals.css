@@ -206,6 +206,30 @@ body {
   border-radius: 9999px;
 }
 
+.icon-shell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.5), transparent 58%),
+    linear-gradient(135deg, rgba(5, 150, 105, 0.14), rgba(6, 182, 212, 0.16));
+  border: 1px solid rgba(5, 150, 105, 0.16);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 16px 40px rgba(5, 150, 105, 0.12);
+}
+
+.icon-shell::after {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent);
+  pointer-events: none;
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -276,6 +300,16 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
+
+  .icon-shell {
+    background:
+      radial-gradient(circle at top, rgba(255, 255, 255, 0.1), transparent 58%),
+      linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(6, 182, 212, 0.2));
+    border-color: rgba(148, 163, 184, 0.16);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 20px 44px rgba(15, 23, 42, 0.5);
+  }
 
   .portfolio-swiper .swiper-button-next,
   .portfolio-swiper .swiper-button-prev {
