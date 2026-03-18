@@ -55,7 +55,6 @@ export default function ContactPage() {
                         transition={{ duration: 0.5 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="badge mb-4 inline-block">Hubungi Kami</span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             Mari <span className="gradient-text">Berkolaborasi</span>
                         </h1>

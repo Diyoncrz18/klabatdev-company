@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { List, Phone, WhatsappLogo, X } from "@/lib/site-icons"
+import { ThemeToggle } from "./ThemeToggle"
 
 const navLinks = [
     { href: "/", label: "Beranda" },
@@ -26,7 +27,7 @@ export const HeaderComp = () => {
                 <Link href="/" className="relative py-2">
                     <div className="relative overflow-hidden w-[160px] h-[56px] md:w-[180px] md:h-[63px]">
                         <Image
-                            src="/Logo-KlabatDev(475x187).svg"
+                            src="/Logo-KlabatDev.svg"
                             fill
                             alt="Klabat Dev Logo"
                             className="object-contain"
@@ -68,16 +69,21 @@ export const HeaderComp = () => {
                         <WhatsappLogo size={18} weight="fill" />
                         Hubungi Kami
                     </Link>
+                    <ThemeToggle />
                 </nav>
 
-                {/* Mobile Menu Button */}
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="md:hidden p-2 text-foreground"
-                    aria-label="Toggle menu"
-                >
-                    {isOpen ? <X size={24} weight="bold" /> : <List size={24} weight="bold" />}
-                </button>
+                {/* Mobile Controls */}
+                <div className="md:hidden flex items-center gap-2">
+                    <ThemeToggle />
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="p-2 text-foreground"
+                        aria-label="Toggle menu"
+                    >
+                        {isOpen ? <X size={24} weight="bold" /> : <List size={24} weight="bold" />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Navigation */}

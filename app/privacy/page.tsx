@@ -17,7 +17,6 @@ export default function PrivacyPolicyPage() {
                         transition={{ duration: 0.5 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="badge mb-4 inline-flex gap-2"><ShieldCheck size={16} weight="fill" />Legal</span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             Kebijakan <span className="gradient-text">Privasi</span>
                         </h1>

@@ -17,7 +17,6 @@ export default function AboutPage() {
                         transition={{ duration: 0.5 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="badge mb-4 inline-flex gap-2"><Target size={16} weight="fill" />Tentang Kami</span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             Mengenal Lebih Dekat <span className="gradient-text">{companyInfo.name}</span>
                         </h1>
@@ -38,7 +37,6 @@ export default function AboutPage() {
                             transition={{ duration: 0.5 }}
                             viewport={{ once: true }}
                         >
-                            <span className="badge mb-4 inline-block">Cerita Kami</span>
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">
                                 Dari Passion Menjadi Profesi
                             </h2>
@@ -134,7 +132,6 @@ export default function AboutPage() {
                         viewport={{ once: true }}
                         className="text-center mb-12"
                     >
-                        <span className="badge mb-4 inline-block">Nilai Kami</span>
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Prinsip yang Kami Pegang
                         </h2>

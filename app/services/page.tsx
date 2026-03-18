@@ -17,7 +17,6 @@ export default function ServicesPage() {
                         transition={{ duration: 0.5 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="badge mb-4 inline-flex gap-2"><Sparkle size={16} weight="fill" />Layanan Kami</span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             Solusi Digital <span className="gradient-text">Lengkap</span>
                         </h1>
@@ -50,7 +49,6 @@ export default function ServicesPage() {
                         viewport={{ once: true }}
                         className="text-center mb-12"
                     >
-                        <span className="badge mb-4 inline-block">Proses Kerja</span>
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Bagaimana Kami Bekerja
                         </h2>

@@ -24,7 +24,6 @@ export default function PortfolioPage() {
                         transition={{ duration: 0.5 }}
                         className="max-w-3xl mx-auto text-center"
                     >
-                        <span className="badge mb-4 inline-flex gap-2"><Sparkle size={16} weight="fill" />Portfolio</span>
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             Karya <span className="gradient-text">Terbaik</span> Kami
                         </h1>

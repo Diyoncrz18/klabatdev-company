@@ -7,16 +7,17 @@ import { IconShell, ServiceIcon } from "@/lib/site-icons"
 interface ServiceCardProps {
     service: Service
     index: number
+    className?: string
 }
 
-export const ServiceCard = ({ service, index }: ServiceCardProps) => {
+export const ServiceCard = ({ service, index, className = "" }: ServiceCardProps) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="card p-6 group"
+            className={`card p-6 group flex flex-col items-start h-full ${className}`}
             id={service.id}
         >
             {/* Icon */}
@@ -35,7 +36,7 @@ export const ServiceCard = ({ service, index }: ServiceCardProps) => {
             </p>
 
             {/* Features */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mt-auto pt-4">
                 {service.features.slice(0, 4).map((feature) => (
                     <span key={feature} className="badge">
                         {feature}
